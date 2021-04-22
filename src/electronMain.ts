@@ -4,16 +4,16 @@ import path from 'path';
 function createAndReturnWindow () {
     let display = screen.getPrimaryDisplay();
     const win = new BrowserWindow({
-        width: 500,
+        width:  500,
         height: 80,
+        frame:  true,
+        skipTaskbar: true,
+        x: (display.size.width / 2) - 250,
+        y: (display.size.height /2 ) - 400,
         webPreferences: {
             preload: path.join(__dirname, 'initialize.js'),
             nativeWindowOpen: true
-        },
-        frame: false,
-        skipTaskbar: true,
-        x: (display.size.width / 2) - 250,
-        y: (display.size.height /2 ) - 400
+        }
     })
 
     win.loadFile('index.html')
@@ -21,7 +21,6 @@ function createAndReturnWindow () {
 }
 
 app.whenReady().then(() => {
-    
     const win = createAndReturnWindow()
     const ret = globalShortcut.register('CommandOrControl+Space', () => {
         if (win.isVisible())
