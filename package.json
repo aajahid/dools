@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --extensions '.ts' --extensions '.tsx' -d dist",
+    "build": "babel src --extensions .ts --extensions .tsx -d dist",
+    "watch": "babel src --extensions .ts --extensions .tsx -d dist --watch",
     "clean": "rimraf ./dist",
     "start": "npm run clean & npm run build & electron ."
   },
