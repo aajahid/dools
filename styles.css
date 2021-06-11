@@ -1,0 +1,65 @@
+:root {
+    --backgroundColor: #2d2d2d;
+    --borderColor: #c0c0c0;
+    --primaryTextColor: #FFF;
+    --disabledTextColor: #919191;
+
+    --borderRadios: 10px;
+    
+    --fontSize: 30px;
+}
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+div {
+    display: flex;
+}
+body, #content {
+    background: transparent;
+    color: var(--primaryTextColor)
+}
+
+#content {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+#search {
+    flex: 1;
+    background: var(--backgroundColor);
+    border-radius: var(--borderRadios);
+    align-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+#search .icon {
+    margin-right: 20px;
+}
+
+#search .icon svg {
+    width: 30px;
+}
+
+#search .icon svg path {
+    fill: var(--primaryTextColor);
+}
+
+#search input {
+    background: var(--backgroundColor);
+    border: 0;
+    color: var(--primaryTextColor);
+    flex: 1;
+    font-size: var(--fontSize);
+    outline: none;
+}
+
+#search input::placeholder {
+    color: var(--disabledTextColor);
+}
