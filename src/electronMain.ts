@@ -1,34 +1,41 @@
-import { app, BrowserWindow, globalShortcut, screen } from 'electron';
 import path from 'path';
+import { app, BrowserWindow, globalShortcut, screen } from 'electron';
+
 
 function createAndReturnWindow () {
     let display = screen.getPrimaryDisplay();
     const win = new BrowserWindow({
-        width:  500,
-        height: 70,
-        frame:  false,
+        width      : 500,
+        height     : 500,
+        frame      : false,
         skipTaskbar: true,
-        resizable: false,
+        resizable  : false,
         transparent: true,
-        x: (display.size.width / 2) - 250,
-        y: (display.size.height /2 ) - 400,
+        alwaysOnTop: true,
+        x          : (display.size.width / 2) - 250,
+        y          : (display.size.height /2 ) - 400,
         webPreferences: {
-            preload: path.join(__dirname, 'initialize.js'),
-            nativeWindowOpen: true
+            enableRemoteModule: true,
+            nativeWindowOpen  : true,
+            nodeIntegration   : true,
+            preload           : path.join(__dirname, 'initialize.js'),
         }
     })
 
-    win.loadFile('index.html')
+    win.loadFile('index.html');
     return win;
 }
 
 app.whenReady().then(() => {
-    const win = createAndReturnWindow()
+    const win = createAndReturnWindow();
+
     const ret = globalShortcut.register('CommandOrControl+Space', () => {
-        if (win.isVisible())
-            win.hide()
-        else
+        if (win.isVisible()) {
+            win.hide();
+        }
+        else {
             win.show();
+        }
     })
 
     win.on('blur', () => {
