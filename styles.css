@@ -1,5 +1,5 @@
 :root {
-    --backgroundColor: #2d2d2d;
+    --backgroundColor: #141622;
     --borderColor: #4d4d4d;
     --primaryTextColor: #FFF;
     --disabledTextColor: #919191;
@@ -31,6 +31,7 @@ body, #content {
     display: flex;
     align-items: stretch;
     flex-direction: column;
+    background-color: var(--backgroundColor)    ;
 }
 
 
@@ -97,7 +98,6 @@ body, #content {
     list-style: none;
     padding: 4px 10px;
     flex: 1;
-    border-bottom: 1px solid var(--borderColor);
     align-items: center;
     display: flex;
 }
@@ -110,4 +110,158 @@ body, #content {
     width: 30px;
     height: 30px;
     margin-right:5px; 
+}
+
+.resultItemDetails {
+    flex: 1;
+    flex-direction: column;
+}
+
+.resultItemDetails .description {
+    font-size: 10px;
+}
+
+
+.windowFrame {
+    background-color: var(--backgroundColor);
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.windowTitleBar {
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+    border-bottom: 1px solid #1c1e2a;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+.titleActions {
+    width: 60px;
+    gap: 8px;
+    -webkit-app-region: no-drag
+}
+
+.titleActions button {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+}
+
+.titleActions button.close {
+    border: 2px solid #de3e33;
+    background-color: #ff5f52;
+}
+
+.titleActions button.minimize {
+    border: 2px solid #de9e01 ;
+    background-color: #ffbe05;
+}
+
+
+.titleActions button.maximize {
+    border: 2px solid #21b238 ;
+    background-color: #15cc35;
+}
+
+
+
+.windowContent {
+    flex: 1;
+}
+
+/**
+ * Settings Page
+ */
+.settingsPage {
+    height: 100%;
+    flex: 1;
+    display: flex;
+}
+
+
+/** 
+ * Plugins settings
+ */
+.settings {
+    display: flex;
+    flex: 1;
+}
+.settingsMenu {
+    width: 200px;
+    border-right: 1px solid #1c1e2a;
+}
+
+.settingsMenu ul {
+    margin: 20px 0;
+    padding: 0;
+    width: 100%;
+}
+.settingsMenu li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.settingsMenu li button {
+    width: 100%;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 0;
+    background-color: transparent;
+    color: #d6d6d6;
+    text-align: left;
+    font-weight: bold;
+}
+.settingsMenu li button:focus {
+    outline: 1px solid #1c1e2a;
+}
+
+.settingsMenu li.active button {
+    background-color: #1c1e2a;
+}
+
+.settingsMenu li button:hover {
+    background-color: #1c1e2a;
+}
+
+.settingsContent {
+    background-color: #1c1e2a;
+    flex: 1;
+}
+
+.pluginSettings {
+    height: 100%;
+    background-color: var(--backgroundColor);
+    flex-direction: column;
+    flex: 1;
+    padding: 10px 15px;
+}
+
+.pluginSettings h1{
+font-size: 20px;
+}
+
+/**
+ * Hash plugin
+ */
+.hashContent {
+    background: var(--backgroundColor);
+}
+
+.hashResult {
+    flex: 1;
+    font-size: 24px;
+    padding: 20px;
+    min-height: 100px;
+    text-align: center;
+}
+
+.hashResult p {
+    text-align: center;
 }
