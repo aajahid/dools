@@ -7,6 +7,8 @@
     --borderRadios: 10px;
     
     --fontSize: 30px;
+
+    --settingsSecondaryColor: #1c1e2a;
 }
 * {
     box-sizing: border-box;
@@ -133,8 +135,8 @@ body, #content {
 .windowTitleBar {
     align-items: center;
     padding: 0 30px;
-    height: 60px;
-    border-bottom: 1px solid #1c1e2a;
+    height: 80px;
+    border-bottom: 1px solid var(--settingsSecondaryColor);
     -webkit-app-region: drag;
     -webkit-user-select: none;
     -webkit-app-region: drag;
@@ -189,17 +191,18 @@ body, #content {
 /** 
  * Plugins settings
  */
+
 .settings {
     display: flex;
     flex: 1;
 }
 .settingsMenu {
-    width: 200px;
+    width: 230px;
     border-right: 1px solid #1c1e2a;
 }
 
 .settingsMenu ul {
-    margin: 20px 0;
+    margin: 30px 0;
     padding: 0;
     width: 100%;
 }
@@ -211,19 +214,20 @@ body, #content {
 .settingsMenu li button {
     width: 100%;
     text-decoration: none;
-    padding: 8px 20px;
+    padding: 8px 40px;
     border: 0;
     background-color: transparent;
-    color: #d6d6d6;
+    color: #686673;
     text-align: left;
-    font-weight: bold;
+    border-left: 5px solid transparent;
 }
 .settingsMenu li button:focus {
     outline: 1px solid #1c1e2a;
 }
 
 .settingsMenu li.active button {
-    background-color: #1c1e2a;
+    color: #049ac0;
+    border-color: #049ac0;
 }
 
 .settingsMenu li button:hover {
@@ -231,10 +235,13 @@ body, #content {
 }
 
 .settingsContent {
-    background-color: #1c1e2a;
+    margin-top: 10px;
     flex: 1;
+    padding: 0 30px;
 }
 
+
+/* Plugin settings */
 .pluginSettings {
     height: 100%;
     background-color: var(--backgroundColor);
@@ -243,8 +250,55 @@ body, #content {
     padding: 10px 15px;
 }
 
-.pluginSettings h1{
-font-size: 20px;
+.pluginSettings .titleBar {
+    display: flex;
+}
+
+.pluginSettings .titleBar .title{
+    font-size: 20px;
+    align-items: center;
+    flex: 1;
+}
+
+.pluginSettings .tabs ul {
+    list-style-type: none;
+}
+
+.pluginSettings .tabs ul li {
+    display: inline;
+    margin: 10px
+}
+
+.pluginSettings .tabs ul button.active {
+    color: #049ac0;
+    border-color: #049ac0;
+}
+
+.pluginSettings .tabs ul li button {
+    background: transparent;
+    color: #686673;
+    padding: 4px 30px;
+    border: 1px solid #404b4e;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.pluginSettings .tabs ul li button:hover {
+    border-color: #5d5b68;
+}
+
+.pluginSettings .tabs ul button.active:hover {
+    border-color: #049ac0;
+}
+
+.pluginListContainer {
+    overflow-y: auto;
+}
+
+.pluginListContainer .scrollView {
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
 }
 
 /**

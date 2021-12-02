@@ -1,6 +1,6 @@
 import React from "react";
 import WinndowFrame from "../components/windowFrame/windowFrame"; 
-import PluginSettings from "./plugins";
+import PluginSettingsWrapper from "./plugins/wrapper";
 import AboutSettings from "./about";
 
 type Pages = {
@@ -21,7 +21,7 @@ export default class Settings extends React.Component<{}, State> {
             pages: [
                 {
                     Name     : "Plugins",
-                    Component: PluginSettings
+                    Component: PluginSettingsWrapper
                 },
                 {
                     Name     : "About",
