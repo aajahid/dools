@@ -156,7 +156,7 @@ export default class dools extends React.Component<{}, State> {
                 enableRemoteModule: true,
                 nativeWindowOpen  : true,
                 nodeIntegration   : true,
-                preload           : path.join(__dirname, 'settings/initialize.js'),
+                preload           : path.join(__dirname, 'settings/initializeWindow.js'),
             }
         })
         this.settingsWindow.focus();

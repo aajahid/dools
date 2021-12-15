@@ -18,7 +18,7 @@ function createAndReturnWindow () {
             enableRemoteModule: true,
             nativeWindowOpen  : true,
             nodeIntegration   : true,
-            preload           : path.join(__dirname, 'initialize.js'),
+            preload           : path.join(__dirname, 'initializeWindow.js'),
         }
     })
 

@@ -5,7 +5,7 @@ interface State {
     
 }
 
-export default class Settings extends React.Component<{}, State> {
+export default class WindowFrame extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props)
         this.state = {

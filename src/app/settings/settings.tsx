@@ -1,6 +1,7 @@
 import React from "react";
 import WinndowFrame from "../components/windowFrame/windowFrame"; 
 import PluginSettingsWrapper from "./plugins/wrapper";
+import ScriptsSettingsWrapper from "./scripts/wrapper";
 import AboutSettings from "./about";
 
 type Pages = {
@@ -24,9 +25,13 @@ export default class Settings extends React.Component<{}, State> {
                     Component: PluginSettingsWrapper
                 },
                 {
+                    Name     : "Scripts",
+                    Component: ScriptsSettingsWrapper
+                },
+                {
                     Name     : "About",
                     Component: AboutSettings
-                }
+                },
             ]
         }
     }
